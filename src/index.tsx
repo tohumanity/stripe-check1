@@ -1,16 +1,12 @@
 import React from 'react';
-import {render} from 'react-dom';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-import {StripeProvider} from 'react-stripe-elements';
+ReactDOM.render(<App />, document.getElementById('root'));
 
-import MyStoreCheckout from './MyStoreCheckout';
-
-const App = () => {
-  return (
-    <StripeProvider apiKey="pk_test_CmdQI1ZgsiGPXxLqO8gfw6M700FXRWfIlb">
-      <MyStoreCheckout />
-    </StripeProvider>
-  );
-};
-
-render(<App />, document.getElementById('root'));
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

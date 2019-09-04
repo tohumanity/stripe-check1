@@ -8,14 +8,14 @@ app.use(cors());
 app.post("/charge", async (req, res) => {
     console.log('I got payment request')
     try {
-      let {status} = await stripe.charges.create({
+      let response = await stripe.charges.create({
         amount: 2000,
         currency: "usd",
         description: "An example charge",
         source: req.body
       });
   
-      res.json({status});
+      res.json(response);
     } catch (err) {
       res.json(err).status(500).end();
     }
