@@ -19,7 +19,6 @@ class CheckoutForm extends Component {
     });
     this.setState({token: JSON.stringify({token}, null, 2)})
     this.setState({response: JSON.stringify(res.status, null, 2)})
-    console.log('Response', res);
     if (res.ok) this.setState({complete: true});
   }
 
@@ -37,9 +36,8 @@ class CheckoutForm extends Component {
       <div className="checkout">
         <p>Demo <b>Inputs</b></p>
         <p>Card Number: 4242424242424242</p>
-        <p>MM/YY: 02\20</p>
+        <p>MM/YY: 02\22</p>
         <p>CVC: 2222</p>
-        <p>ZIP: 22222</p>
         <Card />
         <button onClick={this.submit}>Send</button>
       </div>

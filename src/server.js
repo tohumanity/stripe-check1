@@ -6,7 +6,6 @@ app.use(require("body-parser").text());
 app.use(cors());
 
 app.post("/charge", async (req, res) => {
-    console.log('I got payment request')
     try {
       let response = await stripe.charges.create({
         amount: 2000,
@@ -20,5 +19,5 @@ app.post("/charge", async (req, res) => {
       res.json(err).status(500).end();
     }
   });
-
+  console.log('I got payment request')
   app.listen(9000, () => console.log("Listening on port 9000"));
