@@ -34,10 +34,6 @@ class CheckoutForm extends Component {
 
     return (
       <div className="checkout">
-        <p>Demo <b>Inputs</b></p>
-        <p>Card Number: 4242424242424242</p>
-        <p>MM/YY: 02\22</p>
-        <p>CVC: 2222</p>
         <Card />
         <button onClick={this.submit}>Send</button>
       </div>

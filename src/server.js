@@ -9,7 +9,7 @@ app.post("/charge", async (req, res) => {
     try {
       let response = await stripe.charges.create({
         amount: 2000,
-        currency: "usd",
+        currency: "usdee",
         description: "An example charge",
         source: req.body
       });
